@@ -23,9 +23,9 @@ mkdir -m 0755 -p /data
 chown root:root /data
 
 if [ "$existing" = "$FTP_USER" ] ; then
-    usermod -d /data/$FTP_USER -s /bin/false -g ftp -p $(openssl passwd $FTP_PASS) $FTP_USER
+    usermod -d /data/$FTP_USER -s /bin/false -g ftp -p $(openssl passwd $FTP_PASSWORD) $FTP_USER
 else
-    useradd -d /data/$FTP_USER -s /bin/false -g ftp -p $(openssl passwd $FTP_PASS) $FTP_USER
+    useradd -d /data/$FTP_USER -s /bin/false -g ftp -p $(openssl passwd $FTP_PASSWORD) $FTP_USER
 fi
 
 mkdir -p /data/$FTP_USER/incoming

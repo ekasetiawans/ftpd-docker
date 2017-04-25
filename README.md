@@ -11,7 +11,7 @@ The simplest case is to specify user name and password when starting
 the container:
 
 ```bash
-docker run -p 11021:21 -it --rm -e FTP_USER=scott -e FTP_PASS=tiger -e HOST=publicname.example.com teezily/ftpd
+docker run -p 11021:21 -it --rm -e FTP_USER=scott -e FTP_PASSWORD=tiger -e HOST=publicname.example.com teezily/ftpd
 ```
 
 Note that ```HOST``` signifies the name or IP with which the docker
@@ -33,7 +33,7 @@ down the range with the environment variables `PASV_MIN_PORT` and `PASV_MAX_PORT
 ```bash
 docker run -it --rm \
             -p 11021:21 \
-            -e FTP_USER=scott -e FTP_PASS=tiger -e HOST=myserver.domain.com \
+            -e FTP_USER=scott -e FTP_PASSWORD=tiger -e HOST=myserver.domain.com \
             -p 65000-65004:65000-65004 \
             -e PASV_MIN_PORT=65000 -e PASV_MAX_PORT=65004 \
             teezily/ftpd

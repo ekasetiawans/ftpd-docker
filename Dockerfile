@@ -1,10 +1,10 @@
 ## -*- docker-image-name: "mcreations/ftp" -*-
 
 FROM mcreations/openwrt-x64
-MAINTAINER Kambiz Darabi <darabi@m-creations.net>
+MAINTAINER Teezily <dev@teezily.com>
 
 ENV FTP_USER ftp
-ENV FTP_PASS changeit
+ENV FTP_PASSWORD changeit
 
 # the HOST var is necessary for passive mode, so the client knows
 # where to connect, if you are not running the docker container
