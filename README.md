@@ -1,7 +1,8 @@
-docker-openwrt-ftp
+ftpd-docker
 ===================
 
-An image based on OpenWrt x86_64 which runs a ftp server.
+An image based on OpenWrt x86_64 which runs an ftp server.
+This is a fork of https://github.com/m-creations/docker-openwrt-ftp
 
 How to use
 ----------
@@ -10,7 +11,7 @@ The simplest case is to specify user name and password when starting
 the container:
 
 ```bash
-docker run -p 11021:21 -it --rm -e FTP_USER=scott -e FTP_PASS=tiger -e HOST=publicname.example.com mcreations/ftp
+docker run -p 11021:21 -it --rm -e FTP_USER=scott -e FTP_PASS=tiger -e HOST=publicname.example.com teezily/ftpd
 ```
 
 Note that ```HOST``` signifies the name or IP with which the docker
@@ -35,7 +36,7 @@ docker run -it --rm \
             -e FTP_USER=scott -e FTP_PASS=tiger -e HOST=myserver.domain.com \
             -p 65000-65004:65000-65004 \
             -e PASV_MIN_PORT=65000 -e PASV_MAX_PORT=65004 \
-            mcreations/ftp
+            teezily/ftpd
 ```
 
 Here, the `PASV_MIN_PORT` variable could be omitted as it defaults to 65000.
@@ -53,4 +54,4 @@ Many thanks to the following people who contributed to the project:
 Github Repo
 -----------
 
-https://github.com/m-creations/docker-openwrt-ftp
+https://github.com/teezily/ftpd-docker
